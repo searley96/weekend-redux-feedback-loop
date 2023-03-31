@@ -32,7 +32,7 @@ const saveUnderstanding = () => {
         <div>
        <form onSubmit={saveUnderstanding}>
             
-            <input type="number" placeholder="How are you feeling?" value={newUnderstanding.understanding} onChange={(event) => setUnderstanding(event.target.value)}></input>
+            <input type="number" placeholder="Understanding?" value={newUnderstanding.understanding} onChange={(event) => setUnderstanding(event.target.value)}></input>
             <button type="submit">Next</button>
         </form>
         </div>

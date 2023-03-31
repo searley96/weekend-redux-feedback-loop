@@ -27,6 +27,13 @@ const addSupported = (state = {}, action) => {
     return state;
 }
 
+const addComments = (state = {}, action) => {
+    if (action.type === "SAVE_COMMENTS") {
+        return action.payload;
+    }
+    return state;
+}
+
 
 
 //store
@@ -34,7 +41,8 @@ const storeInstance = createStore(
     combineReducers({
         addFeelings,
         addUnderstanding,
-        addSupported
+        addSupported,
+        addComments
     })
 )
 
