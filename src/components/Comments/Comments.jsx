@@ -9,7 +9,7 @@ function Comments () {
     const history = useHistory();
 
     //state
-    const [newComments, setComments] = useState({comments : 0})
+    const [newComments, setComments] = useState({comments : ""})
 
     //handler for collecting data and pushing to /understanding
 //dispatch saved input within 
@@ -32,7 +32,7 @@ const saveComments = () => {
         <div>
        <form onSubmit={saveComments}>
             
-            <input type="number" placeholder="Comments" value={newComments.comments} onChange={(event) => setComments(event.target.value)}></input>
+            <input type="text" placeholder="Comments" value={newComments.comments} onChange={(event) => setComments(event.target.value)}></input>
             <button type="submit">Next</button>
         </form>
         </div>
