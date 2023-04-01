@@ -4,6 +4,7 @@ import './index.css';
 import App from './components/App/App';
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 
 //reducer
 const addFeelings = (state = {}, action) => {
@@ -42,8 +43,9 @@ const storeInstance = createStore(
         addFeelings,
         addUnderstanding,
         addSupported,
-        addComments
-    })
+        addComments,
+    }),
+    applyMiddleware(logger)
 )
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
