@@ -1,5 +1,6 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 function Review() {
 
@@ -12,6 +13,9 @@ function Review() {
 
     const addComments = useSelector(store => store.addComments)
 
+    //enables push to next page
+    const history = useHistory();
+
     //create object for all inputs
     let allInputs = {
         feeling: addFeelings,
@@ -21,6 +25,7 @@ function Review() {
     }
 
     //post data to database
+    //push to success portion of survey
     function handleSubmit() {
         axios.post('/api/input', allInputs)
         .then((response) => {
@@ -28,6 +33,7 @@ function Review() {
             console.log(error)
             alert('Could not get inputs')
         })
+        history.push("/success")
     }
     
     return (

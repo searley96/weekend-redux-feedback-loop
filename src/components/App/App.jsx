@@ -7,6 +7,7 @@ import Understanding from '../Understanding/Understanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Success from '../Success/Success';
 
 
 function App() {
@@ -34,9 +35,9 @@ function App() {
         <Route path="/review">
           <Review />
         </Route>
-        {/* <Route path="/feedback">
-          <Feedback />
-        </Route> */}
+        <Route path="/success">
+          <Success />
+        </Route>
       </Router>
 
     </div>
