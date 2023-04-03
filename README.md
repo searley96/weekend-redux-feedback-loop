@@ -10,9 +10,9 @@ To run this application, you will need to fork and clone this repo.
 Next, set up the PostgreSQL database. I used a Postico localhost for my project. The database name and SQL queries can be found in the data.sql file within my code. 
 
 Open your terminal and run the commands:
---npm install 
---npm run server 
---npm run client
+1. npm install 
+2. npm run server 
+3. npm run client
 
 Running npm run client will open the project in your browser.
 
