@@ -40,7 +40,9 @@ function Review() {
 
   return (
     <>
-      <Typography color="primary" variant="h3">Review Your Feedback</Typography>
+      <Typography color="primary" variant="h3">
+        Review Your Feedback
+      </Typography>
       <div>
         <Typography variant="h6">
           {" "}
@@ -48,16 +50,16 @@ function Review() {
         </Typography>
         <Typography variant="h6">
           {" "}
-          Support: {addSupported.toString()}{" "}
+          Understanding: {addUnderstanding.toString()}{" "}
         </Typography>
         <Typography variant="h6">
           {" "}
-          Comments: {addComments.toString()}{" "}
+          Support: {addSupported.toString()}{" "}
         </Typography>
 
         <Typography variant="h6">
           {" "}
-          Understanding: {addUnderstanding.toString()}{" "}
+          Comments: {addComments.toString()}{" "}
         </Typography>
 
         <Button
