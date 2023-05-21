@@ -19,7 +19,7 @@ function Supported() {
     if (newSupported >= 1 && newSupported <= 5) {
       dispatch({
         type: "SAVE_SUPPORTED",
-        payload: { newSupported },
+        payload: newSupported ,
       });
       console.log(newSupported);
       history.push("/comments");

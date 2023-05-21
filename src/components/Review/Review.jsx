@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 function Review() {
   //access store to retrieve individual input info
@@ -38,16 +40,34 @@ function Review() {
 
   return (
     <>
-      <h1>Review Your Feedback</h1>
+      <Typography color="primary" variant="h3">Review Your Feedback</Typography>
       <div>
-        <ul>
-          <li>Feelings: {addFeelings.toString()}</li>
-          <li>Understanding: {addUnderstanding.toString()}</li>
-          <li>Support: {addSupported.toString()}</li>
-          <li>Comments: {addComments.toString()}</li>
-        </ul>
+        <Typography variant="h6">
+          {" "}
+          Feelings: {addFeelings.toString()}{" "}
+        </Typography>
+        <Typography variant="h6">
+          {" "}
+          Support: {addSupported.toString()}{" "}
+        </Typography>
+        <Typography variant="h6">
+          {" "}
+          Comments: {addComments.toString()}{" "}
+        </Typography>
 
-        <button onClick={handleSubmit}>Submit</button>
+        <Typography variant="h6">
+          {" "}
+          Understanding: {addUnderstanding.toString()}{" "}
+        </Typography>
+
+        <Button
+          onClick={handleSubmit}
+          variant="contained"
+          type="submit"
+          sx={{ mt: 5 }}
+        >
+          Submit
+        </Button>
       </div>
     </>
   );
