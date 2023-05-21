@@ -1,6 +1,10 @@
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
 function Feeling() {
   const dispatch = useDispatch();
@@ -8,13 +12,13 @@ function Feeling() {
   const history = useHistory();
 
   //state
-  const [newFeeling, setFeeling] = useState({ feeling : 0});
+  const [newFeeling, setFeeling] = useState("");
 
   //handler for collecting data and pushing to /understanding
   //dispatch saved input within
-  const saveFeeling = () => {
+  const saveFeeling = (event) => {
     event.preventDefault();
-    if (newFeeling > 0) {
+    if (newFeeling >= 1 && newFeeling <= 5)  {
       dispatch({
         type: "SAVE_FEELING",
         payload: newFeeling ,
@@ -22,26 +26,33 @@ function Feeling() {
       console.log(newFeeling);
       history.push("/understanding");
     } else {
-      alert("Please enter a number!");
+      alert("Please enter a number between 1 and 5!");
     }
   };
   return (
     <>
-      <div>
-        <h1>How are you feeling today?</h1>
-        <h3>Feeling?</h3>
-      </div>
-      <div>
+      <Box textAlign="center">
+        <Typography variant="h4">How are you feeling?</Typography>
+        <Typography variant="subtitle1" color="primary">
+          On a scale of 1 to 5 (1 being horrible, 5 being incredible), how are you feeling?
+        </Typography>
+      </Box>
+
+      <Box textAlign="center">
         <form onSubmit={saveFeeling}>
-          <input
-            type="number"
-            placeholder="How are you feeling?"
-            value={newFeeling.feeling}
-            onChange={(event) => setFeeling(event.target.value)}
-          ></input>
-          <button type="submit">Next</button>
+          <Box  justifyContent="center" alignItems="center" mt={2}>
+            <TextField
+              placeholder="Feeling?"
+              value={newFeeling}
+              onChange={(event) => setFeeling(event.target.value)}
+              sx={{ marginRight: 1 }}
+            />
+            <Button variant="contained" type="submit" sx={{ mt: 10}}>
+              Next
+            </Button>
+          </Box>
         </form>
-      </div>
+      </Box>
     </>
   );
 }
