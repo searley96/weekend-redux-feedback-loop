@@ -1,4 +1,6 @@
 import { useHistory } from "react-router-dom";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 function Success() {
   //enable push to next page
@@ -12,11 +14,8 @@ function Success() {
   return (
     <>
       <div>
-        <h1>Feedback!</h1>
-      </div>
-      <div>
-        <h1>Thank You!</h1>
-        <button onClick={resetSurvey}>Leave New Feedback</button>
+        <Typography variant="h4">Thank You For Your Feedback!</Typography>
+        <Button variant="contained" sx={{ mt: 2}} onClick={resetSurvey}>Leave New Feedback</Button>
       </div>
     </>
   );
